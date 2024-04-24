@@ -1,13 +1,36 @@
 <h1 class="mt-3">Selectores anidados</h1>
 
 <hr>
-
-<div [formGroup]="myForm" class="row mb-3">
-    <div class="col">
-        <label class="form-label"></label>
-        <select name="" id="" class="form-control">
-            <option value="">-- Seleccione Continente --</option>
-        </select>
+<div  [formGroup]="myForm">
+    <!-- Regions -->
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label"></label>
+            <select formControlName="region"  class="form-control">
+                <option value="">-- Seleccione Continente --</option>
+                <option [value]="region" *ngFor="let region of regions">{{region}}</option>
+            </select>
+        </div>
+    </div>
+    <!-- countries -->
+    <div class="row mb-3" *ngIf="countriesByRegion.length > 0">
+        <div class="col">
+            <label class="form-label"></label>
+            <select formControlName="country"  class="form-control">
+                <option value="">-- Seleccione Continente --</option>
+                <option [value]="country.cca3" *ngFor="let country of countriesByRegion">{{country.name}}</option>
+            </select>
+        </div>
+    </div>
+    <!-- Borders -->
+    <div class="row mb-3" *ngIf="borders.length > 0">
+        <div class="col">
+            <label class="form-label"></label>
+            <select formControlName="borders"  class="form-control">
+                <option value="">-- Seleccione Continente --</option>
+                <option [value]="border.cca3" *ngFor="let border of borders">{{border.name}}</option>
+            </select>
+        </div>
     </div>
 </div>
 
@@ -15,3 +38,5 @@
 <pre>{{myForm.value | json}}</pre>
 <h1>is Valid?</h1>
 <pre>{{myForm.valid| json}}</pre>
+<h1>Border</h1>
+<pre>{{borders | json}}</pre>

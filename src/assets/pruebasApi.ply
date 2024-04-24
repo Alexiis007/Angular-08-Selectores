@@ -1,0 +1,4 @@
+pruebasApi:
+  url: https://restcountries.com/v3.1/alpha/BRA?fields=cca3,name,borders
+  method: GET
+  headers: {}

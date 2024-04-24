@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectorPageComponent } from './selector-page.component';
+import { SelectorPageComponent } from './SelectorPageComponent';
 
 describe('SelectorPageComponent', () => {
   let component: SelectorPageComponent;
